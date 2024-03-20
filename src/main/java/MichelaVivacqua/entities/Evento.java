@@ -35,6 +35,13 @@ public class Evento {
     private Location eventi;
 
     public Evento (){}
+    public Evento (String titolo, String dataEvento, String descrizone, TipoEvento tipoEvento, int numeroMassimoPartecipanti){
+        this.titolo=titolo;
+        this.dataEvento=dataEvento;
+        this.descrizone=descrizone;
+        this.tipoEvento=tipoEvento;
+        this.numeroMassimoPartecipanti=numeroMassimoPartecipanti;
+    };
 
     public Evento (String titolo, String dataEvento, String descrizone, TipoEvento tipoEvento, int numeroMassimoPartecipanti, String location){
         this.titolo=titolo;
