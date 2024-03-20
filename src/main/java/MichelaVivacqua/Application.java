@@ -10,7 +10,7 @@ import jakarta.persistence.Persistence;
 import org.hibernate.annotations.NotFound;
 
 public class Application {
-private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("gestioneeventi");
+private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("eventi2");
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
         EventoDAO ed = new EventoDAO(em);

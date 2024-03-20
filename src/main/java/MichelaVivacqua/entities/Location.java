@@ -2,6 +2,8 @@ package MichelaVivacqua.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name="locations")
@@ -15,7 +17,8 @@ public class Location {
 
     @Column (name="citta")
     private String citta;
-
+    @OneToMany (mappedBy = "location")
+    private List<Evento> eventi;
 
     public Location (){}
 

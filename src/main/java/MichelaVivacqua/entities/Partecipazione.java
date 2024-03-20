@@ -17,7 +17,11 @@ public class Partecipazione {
     @Column (name="stato")
     private Stato stato;
 
+@ManyToOne
+@JoinColumn (name="persona")
+@JoinColumn (name="evento")
 
+private Partecipazione partecipazione;
     public Partecipazione (){}
 
     public Partecipazione (String persona, String evento,Stato stato)

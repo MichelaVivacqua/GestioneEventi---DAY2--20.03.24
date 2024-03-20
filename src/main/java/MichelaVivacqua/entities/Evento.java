@@ -2,6 +2,8 @@ package MichelaVivacqua.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table (name="eventi")
 public class Evento {
@@ -23,14 +25,24 @@ public class Evento {
     @Column (name="numeroMassimoPartecipanti")
     private int numeroMassimoPartecipanti;
 
+    @Column (name="location")
+    private String location;
+    @OneToMany (mappedBy = "evento")
+    private List<Partecipazione> partecipazioni;
+    @ManyToOne
+    @JoinColumn (name="location")
+
+    private Location eventi;
+
     public Evento (){}
 
-    public Evento (String titolo, String dataEvento, String descrizone, TipoEvento tipoEvento, int numeroMassimoPartecipanti){
+    public Evento (String titolo, String dataEvento, String descrizone, TipoEvento tipoEvento, int numeroMassimoPartecipanti, String location){
         this.titolo=titolo;
         this.dataEvento=dataEvento;
         this.descrizone=descrizone;
         this.tipoEvento=tipoEvento;
         this.numeroMassimoPartecipanti=numeroMassimoPartecipanti;
+        this.location=location;
     };
 
     public int getId() {

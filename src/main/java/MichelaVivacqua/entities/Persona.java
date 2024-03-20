@@ -3,6 +3,7 @@ package MichelaVivacqua.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -28,6 +29,8 @@ public class Persona {
     @Column (name="listaPartecipazioni")
     private String listaPartecipazioni;
 
+    @OneToMany (mappedBy = "persona")
+    private List<Partecipazione> partecipazioni;
     public Persona (){}
 
     public Persona (String nome, String cognome, String email, LocalDate dataDiNascita, char sesso, String listaPartecipazioni)
